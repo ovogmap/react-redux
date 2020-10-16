@@ -4,8 +4,9 @@ import App from './App';
 import { createStore } from "redux"
 import RootReducer from "./modules/index"
 import { Provider } from "react-redux"
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(RootReducer)
+const store = createStore(RootReducer, composeWithDevTools())
 const listener = () => {
   const state = store.getState();
   console.log(state);
